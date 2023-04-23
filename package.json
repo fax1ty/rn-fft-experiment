@@ -4,18 +4,31 @@
   "main": "node_modules/expo/AppEntry.js",
   "scripts": {
     "start": "expo start",
-    "android": "expo start --android",
-    "ios": "expo start --ios",
-    "web": "expo start --web"
+    "build:aab": "npx eas build --profile production --platform android",
+    "build:apk": "npx eas build --profile development --platform android",
+    "build:apk:preview": "npx eas build --profile preview-android --platform android",
+    "build:ipa": "npx eas build --profile production --platform ios",
+    "build:ipa:preview": "npx eas build --profile preview --platform ios",
+    "build:ipa:debug": "npx eas build --profile development --platform ios"
   },
   "dependencies": {
+    "@fugood/react-native-audio-pcm-stream": "^1.1.4",
+    "@types/base-64": "^1.0.0",
+    "base-64": "^1.0.0",
     "expo": "~48.0.11",
+    "expo-asset": "^8.9.1",
+    "expo-dev-client": "~2.2.1",
+    "expo-permissions": "^14.1.1",
     "expo-status-bar": "~1.4.4",
+    "ezfft": "^1.0.10",
+    "mathjs": "^11.8.0",
     "react": "18.2.0",
-    "react-native": "0.71.6"
+    "react-native": "0.71.6",
+    "rn-fetch-blob": "^0.12.0"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",
+    "@expo/metro-config": "^0.7.1",
     "@types/react": "~18.0.14",
     "typescript": "^4.9.4"
   },

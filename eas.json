@@ -1,0 +1,34 @@
+{
+    "build": {
+        "fast": {
+            "ios": {
+                "resourceClass": "m1-medium",
+                "image": "latest"
+            }
+        },
+        "development": {
+            "extends": "fast",
+            "developmentClient": true,
+            "distribution": "internal"
+        },
+        "preview": {
+            "developmentClient": false,
+            "distribution": "store"
+        },
+        "preview-android": {
+            "extends": "preview",
+            "distribution": "internal"
+        },
+        "production": {
+            "extends": "fast"
+        }
+    },
+    "submit": {
+        "preview": {
+            "extends": "base"
+        },
+        "production": {
+            "extends": "base"
+        }
+    }
+}
